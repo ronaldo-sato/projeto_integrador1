@@ -1,0 +1,164 @@
+:root {  /* forma de se definir variáveis */
+  --gap: 6rem;  /* padronizar espaçamento das seções */
+}
+
+* {  /* seletor de tudo */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* border-box
+  para fora: margin;
+  para dentro: border, padding (e content)
+*/
+
+html {  /* seletor por elemento */
+  font-size: 62.5%;  /* para usar unidade relativa rem */
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 5rem;
+  text-transform: uppercase;  /* Letras maiúsculas */
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+
+p {
+  font-size: 2rem;
+}
+/* a {
+  text-decoration: none;
+} */
+
+.montserrat {  /* para headings */
+  /* 
+  <weight>: Use a value from 100 to 900
+  <uniquifier>: Use a unique and descriptive class name
+  */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.open-sans {  /* para textos */
+  /* 
+  <weight>: Use a value from 300 to 800
+  <uniquifier>: Use a unique and descriptive class name
+  */
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* #body {
+  padding-top: var(--gap);
+} */
+
+
+/*
+  Sintaxe seletor de classe: .nome_classe
+    onde, "." é o seletor para classe e "nome_classe", a classe selecionada
+*/
+
+.main-bg {  /* fundo principal */
+  background-image: url('../img/scattered.svg');
+  background-position: center center;
+  color: black;
+}
+
+.main-content {  /* sustenta o conteúdo */
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.section-page {  /* Landing Page */
+  min-height: 100vh;  /* cada seção de página ocupará o espaço vertical do viewport */
+  padding: var(--gap);
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;  /* fixar sempre no topo (outros elementos não sabem disso) */
+  left: 0;   /*                                                */
+  top: 0;    /*  Fixando e Evitando comportamentos indesejados */
+  right: 0;  /*                                                */
+  width: 100%;  /* comprimento do viewport */
+  height: 6rem;
+}
+
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex; 
+  max-width: 100%;
+  padding: 0 8rem;  /* padding laterais */
+  margin: 0 auto;
+}
+
+.menu ul li a {
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 1.25rem 3rem;
+  position: relative;
+}
+
+.menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  width: 0;
+  height: 0.25rem;
+  background: rgba(0, 0, 0, 0.7)  ;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+}
+
+.menu ul li a:hover::after {
+  width: 72%;
+  left: 13%;
+}
+
+.menu-spacing {
+  position: relative;
+}
+
+#home {
+  /* display: flex;
+  justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.integrantes {
+  font-size: 1.5rem;
+}
+
+.integrantes ul {
+  align-content: center;
+}
+
+.integrantes li {
+  list-style: none;
+}
