@@ -81,6 +81,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
 }
 
+/* Selecionar tipos de entrada por atributos */
+input[type="text"], 
+input[type="email"] {
+    width: 100%;             /* ocupar a largura do contêiner */
+    padding: .8rem;          /* espaçamento interno entre texto e borda */
+    box-sizing: border-box;  /* garantir que padding não aumente o tamanho final do campo */
+    display: block;          /* cada campo ocupa uma linha */
+    margin-bottom: 1rem;     /* espaçamento entre os campos */
+}
+
 /*
   Sintaxe seletor de classe:
     
