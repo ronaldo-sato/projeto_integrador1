@@ -17,25 +17,24 @@
 
   <!--Menu de Navegação-->
   <aside id="menu" class="menu">
-    <div class="menu-content">
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#formulario-farmacia">Farmácia</a></li>
-          <li><a href="#formulario-produto">Produto</a></li>
-          <li><a href="#formulario-preco">Preço</a></li>
-          <li><a href="#about">Sobre</a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- <div> -->
+    <nav>
+      <ul class="menu-content">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#farmacia">Farmácia</a></li>
+        <li><a href="#produto">Produto</a></li>
+        <li><a href="#preco">Preço</a></li>
+        <li><a href="#about">Sobre</a></li>
+      </ul>
+    </nav>
+    <!-- </div> -->
   </aside>
 
-  <div class="menu-spacing"></div>
 
   <!--Home-->
   <section class="main-content section-page">
-    <div id="home" class="home" action="#">
-      <h2>Comparador de Preços</h2>
+    <div id="home" action="#">
+      <h1>Comparador de Preços</h1>
       <p>
         Esta é uma aplicação protótipo para comparação de preços de produtos de farmácias.
       </p>
@@ -55,113 +54,120 @@
             <input type="email" id="email-usuario" name="email-usuario" placeholder="seu@email.com" required>
           </p>
           <p>
-            <button type="submit">Entrar</button>
-            <button type="submit">Cadastrar</button>
+            <button type="reset" class="button">Limpar</button>
+            <button type="submit" class="button">Entrar</button>
+            <button type="submit" class="button">Cadastrar</button>
           </p>
         </fieldset>
       </form>
     </div>
   </section>
 
-  <div class="menu-spacing"></div>
-
   <!--Cadastro Farmácia-->
-  <section class="main-content section-page">
-    <h2>Cadastro de Farmácia</h2>
-    <form id="formulario-farmacia" action="#" method="get" target="_blank">
-      <fieldset class="fieldset">
-        <legend>Preencha</legend>
-        <p>
-          <label for="nome_farmacia">Nome:</label>
-          <input type="text" id="nome_farmacia" name="nome_farmacia" placeholder="Estabelecimento" required>
-        </p>
-        <p>
-          <label for="endereco"></label>
-          <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
-        </p>
-        <p class="button">
-          <button type="reset">Limpar</button>
-          <button type="submit">Enviar</button>
-        </p>
-      </fieldset>
-    </form>
+  <section id="farmacia" class="main-content section-page">
+    <div>
+      <h2>Cadastro de Farmácia</h2>
+      <form id="formulario-farmacia" action="#" method="get" target="_blank">
+        <fieldset class="fieldset">
+          <legend>Preencha</legend>
+          <p>
+            <label for="nome_farmacia">Nome:</label>
+            <input type="text" id="nome_farmacia" name="nome_farmacia" placeholder="Estabelecimento" required>
+          </p>
+          <p>
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+          </p>
+          <p class="button">
+            <button type="reset" class="button">Limpar</button>
+            <button type="submit" class="button">Enviar</button>
+          </p>
+        </fieldset>
+      </form>
+    </div>
   </section>
 
-  <div class="menu-spacing"></div>
+  <!-- <div class="menu-spacing"></div> -->
 
   <!--Cadastro Produto-->
-  <section class="main-content section-page">
-    <h2>Cadastro de Produto</h2>
-    <form id="formulario-produto" action="#" method="get" target="_blank">
-      <fieldset class="fieldset">
-        <legend>Preencha</legend>
-        <p>
-          <label for="select">Farmácia:</label>
-          <select id="select" name="select">
-            <option value="Valor 0" label="Selecione"></option>
-            <option value="Valor 1" label="Farmácia 1"></option>
-            <option value="Valor 2" label="Farmácia 2"></option>
-            <option value="Valor 3" label="Farmácia 3"></option>
-          </select>
-        </p>
-        <p>
-          <label for="nome-produto">Nome:</label>
-          <input type="text" id="nome" name="nome" placeholder="Produto" required>
-        </p>
-        <p>
-          <label for="valor">Preço:</label>
-          <input type="text" id="valor" name="valor" placeholder="Valor" required>
-        </p>
-        <p>
-          <label for="date">Data:</label>
-          <input type="datetime" id="date" name="date" value="2026-03-29" required>
-        </p>
-        <p>
-          <label for="time">Data:</label>
-          <input type="time" id="time" name="time" value="20:00" required>
-        </p>
+  <section id="produto" class="main-content section-page">
+    <div>
+      <h2>Cadastro de Produto</h2>
+      <form id="formulario-produto" action="#" method="get" target="_blank">
+        <fieldset class="fieldset">
+          <legend>Preencha</legend>
+          <p>
+            <label for="select">Farmácia:</label>
+            <select id="select" name="select">
+              <option value="Valor 0" label="Selecione"></option>
+              <option value="Valor 1" label="Farmácia 1"></option>
+              <option value="Valor 2" label="Farmácia 2"></option>
+              <option value="Valor 3" label="Farmácia 3"></option>
+            </select>
+          </p>
+          <p>
+            <label for="nome-produto">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Produto" required>
+          </p>
+          <p>
+            <label for="valor">Preço:</label>
+            <input type="text" id="valor" name="valor" placeholder="Valor" required>
+          </p>
+          <p>
+            <label for="date">Data:</label>
+            <input type="datetime" id="date" name="date" value="2026-03-29" required>
+          </p>
+          <p>
+            <label for="time">Data:</label>
+            <input type="time" id="time" name="time" value="20:00" required>
+          </p>
 
-        <p>
-          <label for="foto_codigo">Foto Código de Barras:</label>
-          <input type="file" id="foto_codigo" name="foto_codigo" accept="image/*">
-        </p>
-        <p>
-          <button type="reset">Limpar</button>
-          <button type="submit">Enviar</button>
-        </p>
-      </fieldset>
-    </form>
+          <p>
+            <label for="foto_codigo">Foto Código de Barras:</label>
+            <input type="file" id="foto_codigo" name="foto_codigo" accept="image/*">
+          </p>
+          <p>
+            <button type="reset">Limpar</button>
+            <button type="submit">Enviar</button>
+          </p>
+        </fieldset>
+      </form>
+    </div>
   </section>
 
-  <div class="menu-spacing"></div>
+  <!-- <div class="menu-spacing"></div> -->
 
   <!--Pesquisa Preços-->
-  <section class="main-content section-page">
-    <h3>Pesquisa de Preço</h3>
-    <form id="formulario-preco" action="#" method="get" target="_blank">
-      <fieldset class="fieldset">
-        <legend>Preencha</legend>
-        <p>
-          <label for="preco-produto">Nome:</label>
-          <input type="text" id="preco-produto" name="preco-produto" placeholder="Produto" required>
-        </p>
-        <p>
-          <button type="reset">Limpar</button>
-          <button type="submit">Enviar</button>
-        </p>
-      </fieldset>
-    </form>
+  <section id="preco" class="main-content section-page">
+    <div>
+      <h3>Pesquisa de Preço</h3>
+      <form id="formulario-preco" action="#" method="get" target="_blank">
+        <fieldset class="fieldset">
+          <legend>Preencha</legend>
+          <p>
+            <label for="preco-produto">Nome:</label>
+            <input type="text" id="preco-produto" name="preco-produto" placeholder="Produto" required>
+          </p>
+          <p>
+            <button type="reset">Limpar</button>
+            <button type="submit">Enviar</button>
+          </p>
+        </fieldset>
+      </form>
+    </div>
   </section>
 
-  <div class="menu-spacing"></div>
+  <!-- <div class="menu-spacing"></div> -->
 
   <!--Sobre-->
-  <section id="about" class="about main-content section-page">
-    <div class="about-content">
-      <h2>Projeto Integrador 1</h2>
-      <p>Esta aplicação foi desenvolvida dentro do contexto da disciplica <b>DRP03 - Projeto Integrador em Computação
-          1</b> da Univesp, sob <b>orientação de Éder Aparecido Parigi Filho</b>, pelos <b>integrantes do Grupo 3</b>:
-      </p>
+  <section id="about" class="main-content section-page">
+    <div>
+      <div class="about">
+        <h2>Projeto Integrador 1</h2>
+        <p>Esta aplicação foi desenvolvida dentro do contexto da disciplica <b>DRP03 - Projeto Integrador em Computação
+            1</b> da Univesp, sob <b>orientação de Éder Aparecido Parigi Filho</b>, pelos <b>integrantes do Grupo 3</b>:
+        </p>
+      </div>
       <div>
         <ul class="integrantes">
           <li>Ana Carolina Gomes Franco </li>
