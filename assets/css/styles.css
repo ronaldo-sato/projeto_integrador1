@@ -179,6 +179,7 @@ form {
   text-align: left;
   max-width: 90vh;
   width: 100%;
+  margin-top: 1.5rem;
 }
 
 .button {
