@@ -180,14 +180,8 @@ form {
   border-radius: 0.5rem;
 }
 
-#home {  /* seletor por id */
-  /* display: flex;
-  justify-content: space-between; */
-  /* align-items: center; */
-}
-
 .about {
-    margin-bottom: 2rem; /*  */
+    margin-bottom: 2rem; /* empurrar o que vem depois (lista) para baixo */
 }
 
 .about p {  /* p descendente da .about */
