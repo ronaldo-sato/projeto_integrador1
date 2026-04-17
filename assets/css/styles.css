@@ -182,6 +182,10 @@ form {
   margin-top: 1.5rem;
 }
 
+.formulario p {
+    margin-bottom: .8rem; /* Padronizar espaçamento vertical entre os <p>s dos formulários */
+}
+
 .button {
   padding: 0.3rem;
 }
@@ -211,13 +215,10 @@ form {
   align-content: center;
 }
 
-
 .integrantes li {
   list-style: none;      /* remover marcação */
   margin-bottom: .8rem;  /* adiciona espaçamento vertical entre os itens */
 }
-
-.integrantes li:
 
 /* Remover espaçamento do último item (remover espaço no final da seção) */
 .integrantes li:last-child {
