@@ -1,15 +1,11 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
 
-# Create your views here.
+# namespace home/ -> home/templates/home/ permite uso de arquivos com
+# mesmo nome sem dar colisão de nomes
 
-
-# Funcionamento Protocolo HTTP:
-# (cliente) HTTP Request <-> (servidor) HTTP Response
-
-# Django funciona em MVT (Model View Template - variação de MVC)
-
-# Functions Based Views - views usando função
 
 def index(request):
-    return HttpResponse('Retorno do app')
+    # return HttpResponse('Retorno do app')
+    return render(
+        request,
+        'home/index.html')

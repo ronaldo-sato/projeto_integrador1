@@ -1,0 +1,226 @@
+:root {  /* forma de se definir variáveis */
+  --gap: 6rem;  /* padronizar espaçamento das seções */
+}
+
+* {  /* seletor universal: seleciona tudo */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  /* caixa - para dentro: border, padding (e content), para fora: margin */
+  /* Landing page: elementos da largura da tela */
+}
+
+/* border-box
+  para fora: margin;
+  para dentro: border, padding (e content)
+*/
+
+html {  /* seletor por elemento */
+  font-size: 62.5%;  /* para usar unidade relativa rem */
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  /* scroll-margin-top: 6rem; */
+}
+
+h1 {
+  font-size: 5rem;
+  text-transform: uppercase;  /* Letras maiúsculas */
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+
+p {
+  font-size: 2rem;
+}
+
+/* a {
+  text-decoration: none;
+} */
+
+.montserrat {  /* para headings */
+  /* 
+  <weight>: Use a value from 100 to 900
+  <uniquifier>: Use a unique and descriptive class name
+  */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.open-sans {  /* para textos */
+  /* 
+  <weight>: Use a value from 300 to 800
+  <uniquifier>: Use a unique and descriptive class name
+  */
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+#body {  /* seletor por id */
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;  /* 16px */
+  max-width: 100%;
+  background-color: #e0ebeb;
+  /* background-image: url('../img/scattered.svg'); */
+  /* background-position: center center; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Selecionar tipos de entrada por atributos */
+input[type="text"], 
+input[type="email"] {
+    width: 100%;             /* ocupar a largura do contêiner */
+    padding: .8rem;          /* espaçamento interno entre texto e borda */
+    box-sizing: border-box;  /* garantir que padding não aumente o tamanho final do campo */
+    display: block;          /* cada campo ocupa uma linha */
+    margin-bottom: 1rem;     /* espaçamento entre os campos */
+}
+
+/*
+  Sintaxe seletor de classe:
+    
+    .nome_classe
+    
+    onde, "." é o seletor para classe e "nome_classe", a classe selecionada
+*/
+
+/* fundo principal */
+.main-bg {
+  /* background-image: url('../img/scattered.svg'); */
+  background-position: center center;
+  color: black;
+}
+
+/* sustentar o conteúdo */
+.main-content {
+  max-width: 100rem;
+  margin: 0 auto;
+  /* padding-top: var(--gap); */
+}
+
+.section-page {  /* Landing Page */
+  min-height: 100vh;  /* cada seção de página ocupará o espaço vertical do viewport */
+  display: flex;
+  flex-direction: column;  /* direção eixo principal */
+  justify-content: center;
+  text-align: center;
+  padding-top: -(var(--gap));
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;  /* fixar sempre no topo (outros elementos não sabem disso) */
+  left: 0;   /*                                                */
+  top: 0;    /*  Fixando e evitando comportamentos indesejados */
+  right: 0;  /*                                                */
+  width: 100%;  /* comprimento do viewport */
+  height: var(--gap);
+}
+
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex; 
+  max-width: 100%;
+  padding: 0 8rem;  /* padding laterais */
+  margin: 0 auto;
+}
+
+.menu ul li a {
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 1.25rem 3rem;
+  position: relative;
+}
+
+.menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  width: 0;
+  height: 0.25rem;
+  background: rgba(255, 255, 255, 0.5)  ;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+}
+
+.menu ul li a:hover::after {  /* :hover psedo-seletor da passagem do cursor */
+  width: 72%;
+  left: 13%;
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+  max-width: 90vh;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.formulario p {
+    margin-bottom: .8rem; /* Padronizar espaçamento vertical entre os <p>s dos formulários */
+}
+
+.button {
+  padding: 0.3rem;
+}
+
+.fieldset {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.about {
+    margin-bottom: 2rem; /* empurrar o que vem depois (lista) para baixo */
+}
+
+.about p {  /* p descendente da .about */
+  max-width: 90rem;    /* Define a largura máxima desejada */
+  margin-left: auto;   /* Centraliza horizontalmente */
+  margin-right: auto;  /* Centraliza horizontalmente */
+  text-align: center;  /* Opcional: centraliza o texto dentro do parágrafo */
+  line-height: 1.5;    /* Melhora a legibilidade com espaçamento entre linhas */
+}
+
+.integrantes {
+  font-size: 1.5rem;
+}
+
+.integrantes ul {
+  align-content: center;
+}
+
+.integrantes li {
+  list-style: none;      /* remover marcação */
+  margin-bottom: .8rem;  /* adiciona espaçamento vertical entre os itens */
+}
+
+/* Remover espaçamento do último item (remover espaço no final da seção) */
+.integrantes li:last-child {
+    margin-bottom: 0;
+}
