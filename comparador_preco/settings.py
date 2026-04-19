@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'medicamento',
     'preco',
     'pesquisa',
+    'teste',
 ]
 
 MIDDLEWARE = [
@@ -60,8 +61,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'base',
-            ],
+            BASE_DIR / 'base',  # página base
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

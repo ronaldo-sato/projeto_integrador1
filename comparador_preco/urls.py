@@ -16,38 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-# from django.http import HttpResponse
-# from base import views as 
-
-# Padrão MVT do Django:
-# Navegador ->    URLS   -> Views -> Models -> Banco
-#     --------------------------                 |
-#     |                        |                 |
-#     V                        |                 V
-# Navegador <- Templates <- Views <- Models <- Banco
-
-# HTTP Request <-> HTTP Response
-
-# MVT é uma variação do padrão de Projeto MVC
-
-# Function Based Views (Views Baseadas em Funções)
-
-
-# def my_view(request):
-#     print('Podemos fazer coisas aqui nesta função baseada em função')
-#     return HttpResponse('Isto aqui é enviado ao navegador')
-
-
-# def home(request):
-#     print('Home')
-#     return HttpResponse('Home')
 
 
 urlpatterns = [
     # nenhuma URL pode começar com /
-    # path('', home),                 # Porém Django trabalha com apps e
-    # path('minha_view/', my_views),  # essas views devem ficar em
-    # path('', base.index),           # views.py do respectivo app
     path('', include('base.urls')),
     path('admin/', admin.site.urls),
+    path('teste/', include('teste.urls')),
 ]
