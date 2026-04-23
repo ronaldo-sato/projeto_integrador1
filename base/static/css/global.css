@@ -1,5 +1,8 @@
 :root {  /* forma de se definir variáveis */
-  --gap: 6rem;  /* padronizar espaçamento das seções */
+  --primary-color: #e0ebeb;  /* cor fundo */
+  --black: #000;             /* cor letra */
+  --white: #fff;             /* cor menu */
+  --gap: 6rem;                 /* padronizar espaçamento das seções */
 }
 
 * {  /* seletor universal: seleciona tudo */
@@ -10,40 +13,18 @@
   /* Landing page: elementos da largura da tela */
 }
 
-/* border-box
+/* comportamento border-box
   para fora: margin;
   para dentro: border, padding (e content)
 */
 
 html {  /* seletor por elemento */
   font-size: 62.5%;  /* para usar unidade relativa rem (1rem = 10px) */
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   scroll-behavior: smooth;
   scroll-padding-top: 8rem;
   /* scroll-margin-top: 6rem; */
 }
-
-h1 {
-  font-size: 5rem;
-  text-transform: uppercase;  /* Letras maiúsculas */
-}
-
-h2 {
-    font-size: 4.5rem;
-}
-
-h3 {
-    font-size: 4rem;
-}
-
-
-p {
-  font-size: 2rem;
-}
-
-/* a {
-  text-decoration: none;
-} */
 
 .montserrat {  /* para headings */
   /* 
@@ -71,50 +52,55 @@ p {
 #body {  /* seletor por id */
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;  /* 16px */
+  line-height: 1.5;
   max-width: 100%;
-  background-color: #e0ebeb;
+  background-color: var(--primary-color);
   /* background-image: url('../img/scattered.svg'); */
   /* background-position: center center; */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: "Montserrat", sans-serif;
 }
 
-/* Selecionar tipos de entrada por atributos */
-input[type="text"], 
-input[type="email"] {
-    width: 100%;             /* ocupar a largura do contêiner */
-    padding: .8rem;          /* espaçamento interno entre texto e borda */
-    box-sizing: border-box;  /* garantir que padding não aumente o tamanho final do campo */
-    display: block;          /* cada campo ocupa uma linha */
-    margin-bottom: 1rem;     /* espaçamento entre os campos */
+
+h1 {
+  font-size: 5rem;
+  text-transform: uppercase;  /* Letras maiúsculas */
 }
 
-/*
-  Sintaxe seletor de classe:
-    
-    .nome_classe
-    
-    onde, "." é o seletor para classe e "nome_classe", a classe selecionada
-*/
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+
+p {
+  font-size: 2rem;
+}
+
+/* a {
+  text-decoration: none;
+} */
 
 /* fundo principal */
 .main-bg {
   /* background-image: url('../img/scattered.svg'); */
-  background-position: center center;
-  color: black;
+  /* background-position: center center; */
+  color: var(--black);
 }
 
 /* sustentar o conteúdo */
 .main-content {
   max-width: 100rem;
   margin: 0 auto;
-  /* padding-top: var(--gap); */
 }
 
 .section-page {  /* Landing Page */
-  min-height: 100vh;  /* cada seção de página ocupará o espaço vertical do viewport */
+  min-height: 100vh;  /* cada seção ocupará o espaço vertical do viewport */
   display: flex;
   flex-direction: column;  /* direção eixo principal */
   justify-content: center;
@@ -150,7 +136,7 @@ input[type="email"] {
 
 .menu ul li a {
   font-size: 3rem;
-  color: white;
+  color: var(--white);
   text-decoration: none;
   display: block;
   padding: 1.25rem 3rem;
@@ -164,7 +150,7 @@ input[type="email"] {
   left: 50%;
   width: 0;
   height: 0.25rem;
-  background: rgba(255, 255, 255, 0.5)  ;
+  background: var(--white)  ;
   transition: all 300ms ease-in-out;
   z-index: -1;
 }
@@ -172,27 +158,6 @@ input[type="email"] {
 .menu ul li a:hover::after {  /* :hover psedo-seletor da passagem do cursor */
   width: 72%;
   left: 13%;
-}
-
-form {
-  display: inline-block;
-  text-align: left;
-  max-width: 90vh;
-  width: 100%;
-  margin-top: 1.5rem;
-}
-
-.formulario p {
-    margin-bottom: .8rem; /* Padronizar espaçamento vertical entre os <p>s dos formulários */
-}
-
-.button {
-  padding: 0.3rem;
-}
-
-.fieldset {
-  padding: 1rem;
-  border-radius: 0.5rem;
 }
 
 .about {
