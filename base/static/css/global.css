@@ -20,10 +20,8 @@
 
 html {  /* seletor por elemento */
   font-size: 62.5%;  /* para usar unidade relativa rem (1rem = 10px) */
-  /* font-family: sans-serif; */
   scroll-behavior: smooth;
-  scroll-padding-top: 8rem;
-  /* scroll-margin-top: 6rem; */
+  scroll-snap-type: y mandatory;  /* ativação de imã de rolagem no contêiner principal */ 
 }
 
 .montserrat {  /* para headings */
@@ -105,7 +103,6 @@ p {
   flex-direction: column;  /* direção eixo principal */
   justify-content: center;
   text-align: center;
-  padding-top: -(var(--gap));
 }
 
 .menu {
@@ -116,29 +113,37 @@ p {
   right: 0;  /*                                                */
   width: 100%;  /* comprimento do viewport */
   height: var(--gap);
+  z-index: 100;
 }
 
 .menu-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-bottom: 0;
   padding-top: 0;
+}
+
+.menu nav,
+.menu-content{
+  height: 100%;
 }
 
 .menu ul {
   list-style: none;
   display: flex; 
+  align-items: center;
+  justify-content: center;
   max-width: 100%;
-  padding: 0 8rem;  /* padding laterais */
   margin: 0 auto;
+  height: 100%;
 }
 
 .menu ul li a {
   font-size: 3rem;
   color: var(--white);
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 1.25rem 3rem;
   position: relative;
 }
@@ -146,7 +151,7 @@ p {
 .menu ul li a::after {
   content: '';
   position: absolute;
-  bottom: 1.2rem;
+  bottom: 1.1rem;
   left: 50%;
   width: 0;
   height: 0.25rem;
@@ -157,7 +162,7 @@ p {
 
 .menu ul li a:hover::after {  /* :hover psedo-seletor da passagem do cursor */
   width: 72%;
-  left: 13%;
+  left: 14%;
 }
 
 .about {

@@ -1,0 +1,23 @@
+/* farmacia/static/farmacia/css/atualizar.css */
+/* Estilos específicos para o form de atualização */
+
+.div-editar {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.btn-cancelar {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.btn-cancelar:hover {
+    text-decoration: underline;
+}

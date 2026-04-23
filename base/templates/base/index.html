@@ -153,13 +153,14 @@
               </select>
             </p>
             <p>
-              <label for="valor-preco">Preço:</label>
+              <label for="valor-preco">Preço R$:</label>
               <input type="text" id="valor-preco" name="valor_preco" placeholder="Valor" required>
             </p>
-            <p class="data-hora">
+            <!--Removendo campo de dataHora (irá ser pego automaticamente ao clicar em cadastrar) -->
+            {% comment %} <p class="data-hora">
               <label for="data-hora">Data e Hora:</label>
               <input type="datetime-local" id="data-hora" name="data_hora" value="{% now 'Y-m-d\TH:i' %}" required>
-            </p>
+            </p> {% endcomment %}
             <p>
               <button type="reset" class="button">Limpar</button>
               <button type="submit" class="button">Cadastrar</button>
