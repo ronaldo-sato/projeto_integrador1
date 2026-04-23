@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Farmácia | {{ farmacia.nome }}</title>
+    <title>Farmácias Cadastradas</title>
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/tables.css' %}">
   </head>
@@ -14,7 +14,6 @@
     <section id="lista-farmacias" class="main-content section-page">
       <div>
         <h3>Farmácias Cadastradas</h3>
-        <span class="span">{{ farmacias|length }} registros</span>
       </div>
       <div>
         <table class="tabela">
@@ -43,6 +42,7 @@
             {% endfor %}
           </tbody>
         </table>
+        <span class="span">{{ farmacias|length }} registros</span>
         <a href="{% url 'base:index' %}" class="link-voltar">Voltar para a Home</a>
       </div>
     </section>

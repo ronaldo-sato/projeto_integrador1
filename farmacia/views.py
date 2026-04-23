@@ -14,13 +14,15 @@ def cadastrar(request):
 
         # Pegar dados do formulário, tratando espaços vazios
         nome = request.POST.get('nome_farmacia').strip()
-        endereco = request.POST.get('endereco').stip()
+        endereco = request.POST.get('endereco').strip()
 
         # Verifica se já existe uma farmácia com este nome exato
         # nome__iexact ignora maiúsculas/minúsculas
         if Farmacia.objects.filter(nome__iexact=nome).exists():
             # Envia mensagem de erro
-            messages.error(request, f'A farmácia "{nome}" já está cadastrada!')
+            messages.error(
+                request, f'A farmácia "{nome}" já está cadastrada!')
+
             return redirect('base:index')
 
         # Se não existir, cadastra
