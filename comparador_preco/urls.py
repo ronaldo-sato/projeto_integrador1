@@ -20,7 +20,12 @@ from django.urls import include, path
 
 urlpatterns = [
     # nenhuma URL pode começar com /
-    path('', include('base.urls')),
     path('admin/', admin.site.urls),
+    # incluindo urls dos apps
+    path('', include('base.urls')),
+    path('farmacia/', include('farmacia.urls')),
+    path('medicamento/', include('medicamento.urls')),
+    path('preco/', include('preco.urls')),
+    path('comparar/', include('comparar.urls')),
     path('teste/', include('teste.urls')),
 ]
