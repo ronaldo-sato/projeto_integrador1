@@ -16,15 +16,7 @@
 
       <div class="main-content div-editar">
         <h3>Editar Registro</h3>
-        <!-- Mensagem de feedback dos forms (css está no forms.css) -->
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-        
+
         <form class="formulario" action="{% url 'farmacia:atualizar' farmacia.id %}" method="POST">
           {% csrf_token %}
           <p>

@@ -5,11 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmácias Cadastradas</title>
-    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">]
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/tables.css' %}">
   </head>
 
-  <body id="body" class="main-bg">
+  <body id="body" class="main-bg main-content">
+
+    <div class="conteiner-mensagens">
+      <!-- Mensagem de feedback dos forms (css está no forms.css) -->
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
 
     <section id="lista-farmacias" class="main-content section-page">
       <div>
