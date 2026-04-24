@@ -12,9 +12,9 @@
 
   <body id="body">
 
-    <section class="main-content section-page">
+    <section class="section-page">
 
-      <div class="div-editar">
+      <div class="main-content div-editar">
         <h3>Editar Registro</h3>
         <!-- Mensagem de feedback dos forms (css está no forms.css) -->
         {% if messages %}
@@ -25,7 +25,7 @@
         {% endfor %}
         {% endif %}
         
-        <form action="{% url 'farmacia:atualizar' farmacia.id %}" method="POST">
+        <form class="formulario" action="{% url 'farmacia:atualizar' farmacia.id %}" method="POST">
           {% csrf_token %}
           <p>
             <label for="nome-farmacia">Nome da Farmácia:</label>

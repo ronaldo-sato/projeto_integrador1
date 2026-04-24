@@ -2,12 +2,13 @@
 /* Estilos específicos para o form de atualização */
 
 .div-editar {
-    background: white;
+    background: var(--primary-color);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
+    margin: 0 auto;
 }
 
 .btn-cancelar {

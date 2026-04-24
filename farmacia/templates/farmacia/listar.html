@@ -32,7 +32,7 @@
               <td>{{ farmacia.endereco }}</td>
               <td>
                 <a href="{% url 'farmacia:atualizar' farmacia.id %}" class="btn-editar" onclick="return confirm('ATENÇÃO: Deseja realmente EDITAR a farmácia &quot;{{ farmacia.nome }}&quot;?')">Editar</a>
-                <a href="{% url 'farmacia:deletar' farmacia.id %}" class="btn-excluir" onclick="return confirm('ATENÇÃO: Deseja realmente EXCLUIR a farmácia &quot;{{ farmacia.nome }}?&quot;')">Excluir</a>
+                <a href="{% url 'farmacia:deletar' farmacia.id %}" class="btn-excluir" onclick="return confirm('ATENÇÃO: Deseja realmente EXCLUIR a farmácia &quot;{{ farmacia.nome }}&quot;?')">Excluir</a>
               </td>
             </tr>
             {% empty %}

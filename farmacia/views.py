@@ -23,6 +23,7 @@ def cadastrar(request):
             messages.error(
                 request, f'A farmácia "{nome}" já está cadastrada!')
 
+            # 'app_name:view_name'
             return redirect('base:index')
 
         # Se não existir, cadastra

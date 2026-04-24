@@ -26,13 +26,13 @@
           </thead>
 
           <tbody>
-            {% for medicamento in medicamento %}
+            {% for medicamento in medicamentos %}
             <tr>
               <td>{{ medicamento.nome }}</td>
-              <td>{{ medicamento.endereco }}</td>
+              <td>{{ medicamento.fabricante }}</td>
               <td>
                 <a href="{% url 'medicamento:atualizar' medicamento.id %}" class="btn-editar" onclick="return confirm('ATENÇÃO: Deseja realmente EDITAR o medicamento &quot;{{ medicamento.nome }}&quot;?')">Editar</a>
-                <a href="{% url 'medicamento:deletar' medicamento.id %}" class="btn-excluir" onclick="return confirm('ATENÇÃO: Deseja realmente EXCLUIR o medicamento &quot;{{ medicamento.nome }}?&quot;')">Excluir</a>
+                <a href="{% url 'medicamento:deletar' medicamento.id %}" class="btn-excluir" onclick="return confirm('ATENÇÃO: Deseja realmente EXCLUIR o medicamento &quot;{{ medicamento.nome }}&quot;?')">Excluir</a>
               </td>
             </tr>
             {% empty %}
@@ -42,7 +42,7 @@
             {% endfor %}
           </tbody>
         </table>
-        <span class="span">{{ medicamento|length }} registros</span>
+        <span class="span">{{ medicamentos|length }} registros</span>
         <a href="{% url 'base:index' %}" class="link-voltar">Voltar para a Home</a>
       </div>
     </section>
