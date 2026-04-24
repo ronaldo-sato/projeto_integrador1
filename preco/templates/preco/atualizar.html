@@ -15,16 +15,8 @@
     <section class="main-content section-page">
 
       <div class="div-editar">
-        <h3>Editar Registro</h3>
-        <!-- Mensagem de feedback dos forms (css está no forms.css) -->
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-        
+        <h3>Editar Registro:</h3>
+        <p>{{preco.medicamento.nome}} registrado às {{ preco.data_hora|date:'d/m/Y H:i' }}</p>        
         <form action="{% url 'preco:atualizar' preco.id %}" method="POST">
           {% csrf_token %}
           <p>

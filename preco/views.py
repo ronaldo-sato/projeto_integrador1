@@ -72,25 +72,28 @@ def deletar(request, id):
 def atualizar(request, id):
     preco = get_object_or_404(Preco, id=id)
 
-    preco.nome = request.POST.get('nome_medicamento')
-    preco.preco = request.POST.get('preco')
-    preco.data = request.POST.get('data')
-    preco.hora = request.POST.get('hora')
+    if request.method == 'POST':
+        preco_novo = request.POST.get('valor_preco')
 
-    preco.save()
+        if not preco_novo:
 
-    return redirect('index')
+            messages.error(request, "O campo preço é obrigatório.")
 
+            return render(
+                request, 'preco/atualizar.html', {'preco': preco})
 
-def select(nome, data, hora):
-    preco = get_object_or_404(Preco, nome=nome)
+        try:
+            # Trata a vírgula e converte para float
+            preco.preco = float(preco_novo.replace(',', '.'))
+            preco.save()
 
-    selecionado_por_data = Preco.objects.filter(data=data)
+            messages.success(
+                request, "Preço atualizado com sucesso!")
 
-    selecionado_por_exclusao = Preco.objects.exclude(data=data)
+            return redirect('preco:listar')
 
-    objects = []
+        except ValueError:
+            messages.error(request, "Valor de preço inválido.")
 
-    for obj in selecionado_por_data:
-
-        objects.append(obj)
+    return render(
+        request, 'preco/atualizar.html', {'preco': preco})
