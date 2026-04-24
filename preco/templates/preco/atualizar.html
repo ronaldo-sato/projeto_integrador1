@@ -21,7 +21,7 @@
           {% csrf_token %}
           <p>
             <label for="valor-preco">Preco R$:</label>
-            <input type="text" id="valor-preco" name="valor_preco" value="{{ preco.nome }}" required>
+            <input type="text" id="valor-preco" name="valor_preco" value="{{ preco.preco }}" required>
           </p>
           <p>
             <button type="submit" class="button">Alterar</button>
