@@ -31,10 +31,19 @@ def pesquisar(request):
         if preco.farmacia_id not in precos_unicos:
             precos_unicos[preco.farmacia_id] = preco
 
+    # Encontrar o menor preço na lista
+    lista_precos = list(precos_unicos.values())
+
+    menor_preco = None
+
+    if lista_precos:
+        menor_preco = min(preco.preco for preco in lista_precos)
+
     return render(
         request,
         'pesquisa/precos.html',
         {
-            'precos': precos_unicos.values(),
-            'medicamento': precos[0].medicamento if precos else None
+            'precos': lista_precos,
+            'medicamento': precos[0].medicamento if precos else None,
+            'menor_preco': menor_preco,
         })
