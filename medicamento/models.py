@@ -9,5 +9,10 @@ class Medicamento(models.Model):
     # Não necessita usar chave estrangeira, porque qualquer medicamento
     # existirá independente da farmácia.
 
+    # Pode haver medicamento com mesmo nome,
+    # desde que o fabricante seja diferente
+    class Meta:
+        unique_together = ('nome', 'fabricante')
+
     def __str__(self):
         return f'{self.nome} {self.fabricante}'

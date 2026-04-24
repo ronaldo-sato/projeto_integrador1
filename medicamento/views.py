@@ -13,10 +13,16 @@ def cadastrar(request):
         nome = request.POST.get('nome_medicamento').strip()
         fabricante = request.POST.get('fabricante').strip()
 
-        if Medicamento.objects.filter(nome__iexact=nome).exists():
+        # Permite medicamento com mesmo nome, se for de fabricantes
+        # diferentes
+        if Medicamento.objects.filter(
+                nome__iexact=nome,
+                fabricante__iexact=fabricante).exists():
 
             messages.error(
-                request, f'O medicamento "{nome}" já está cadastrado!')
+                request,
+                f'O medicamento "{nome}" ' +
+                f'do fabricante "{fabricante}" já está cadastrado!')
 
             return redirect('base:index')
 
@@ -25,7 +31,9 @@ def cadastrar(request):
             # Inserir no Banco
             Medicamento.objects.create(nome=nome, fabricante=fabricante)
 
-            messages.success(request, f'Medicamento "{nome}" cadastrado!')
+            messages.success(
+                request,
+                f'Medicamento "{nome}" ({fabricante}) cadastrado!')
 
         # return redirect('medicamento:listar')
         return redirect('base:index')
@@ -67,8 +75,9 @@ def atualizar(request, id):
         # Não podem ser em branco
         if not nome_novo or not fabricante_novo:
 
-            # Mensagem de erro (vazios)
-            messages.error(request, "Erro: Nome ou Endereço é obrigatório.")
+            # # Mensagem de erro (vazios)
+            messages.error(
+                request, "Erro: Nome e Fabricante são obrigatórios.")
 
             # Renderiza edição
             return render(
@@ -77,13 +86,24 @@ def atualizar(request, id):
                 {'medicamento': medicamento})
 
         # (Apenas se nome mudou) Verifica duplicidade:
-        if nome_novo != medicamento.nome and \
-                Medicamento.objects.filter(nome=nome_novo).exists():
+        # if nome_novo != medicamento.nome and \
+        #         Medicamento.objects.filter(nome=nome_novo).exists():
+
+        if (nome_novo != medicamento.nome or
+                fabricante_novo != medicamento.fabricante) and \
+                Medicamento.objects.filter(
+                    nome__iexact=nome_novo,
+                    fabricante__iexact=fabricante_novo).exists():
 
             # Mensagem de erro
+            # messages.error(
+            #     request,
+            #     f'Já existe outro medicamento com o nome "{nome_novo}".')
+
             messages.error(
                 request,
-                f'Já existe outro medicamento com o nome "{nome_novo}".')
+                f'Já existe o medicamento "{nome_novo}" para' +
+                f' o fabricante "{fabricante_novo}".')
 
             # Renderiza para edição
             return render(
