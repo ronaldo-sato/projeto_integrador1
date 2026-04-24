@@ -30,10 +30,12 @@
           </thead>
           <tbody>
             {% for preco in precos %}
-              <tr>
+              <tr class="{% if preco.preco|floatformat:2 == menor_preco|floatformat:2 %}preco-destaque{% endif %}">
                 <td>{{ preco.farmacia.nome }}</td>
                 <td>{{ preco.farmacia.endereco }}</td>
-                <td class="preco-destaque">R$ {{ preco.preco }}</td>
+                <!-- Destacar apenas o menor preço (usa a classe de destaque) -->
+                {% comment %} <td class="{% if preco.preco == menor_preco %}preco-destaque{% endif %}"> {% endcomment %}
+                <td>R$ {{ preco.preco }}</td>
                 <td>{{ preco.data_hora|date:"d/m/Y H:i" }}</td>
               </tr>
             {% empty %}

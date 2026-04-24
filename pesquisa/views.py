@@ -37,7 +37,10 @@ def pesquisar(request):
     menor_preco = None
 
     if lista_precos:
-        menor_preco = min(preco.preco for preco in lista_precos)
+        # Convertendo para float, na tabela o valor como str não estava
+        # sendo destacado
+        menor_preco = float(
+            min(preco.preco for preco in lista_precos))
 
     return render(
         request,
