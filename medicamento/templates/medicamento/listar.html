@@ -14,11 +14,13 @@
 
     <!-- Mensagem de feedback dos forms (css está no forms.css) -->
     {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
-        </div>
-      {% endfor %}
+      <div class="conteiner-mensagens">
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
     {% endif %}
 
     <section id="lista-medicamento" class="main-content section-page">

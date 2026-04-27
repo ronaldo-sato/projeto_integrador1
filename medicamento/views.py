@@ -38,7 +38,7 @@ def cadastrar(request):
         # return redirect('medicamento:listar')
         return redirect('base:index')
 
-    return redirect('base:ndex')
+    return redirect('base:index')
 
 
 def listar(request):
