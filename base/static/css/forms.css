@@ -73,8 +73,9 @@ input[type="datetime-local"] {
 }
 
 /* Container para a mensagem no topo */
-.container-mensagens {
+.conteiner-mensagens {
     margin-top: var(--gap);
+    padding-top: 2rem;
     width: 100%;
     padding: 1rem 0;
     text-align: center;
@@ -88,7 +89,7 @@ input[type="datetime-local"] {
     display: inline-block;
     padding: 1.5rem 3rem;
     border-radius: 0.4rem;
-    margin-bottom: 1rem;
+    margin: 1 0rem;
     font-weight: bold;
     font-size: 1rem;
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);

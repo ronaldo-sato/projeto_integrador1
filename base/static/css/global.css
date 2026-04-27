@@ -170,7 +170,7 @@ p {
 }
 
 .about p {  /* p descendente da .about */
-  max-width: 90rem;    /* Define a largura máxima desejada */
+  max-width: 80rem;    /* Define a largura máxima desejada */
   margin-left: auto;   /* Centraliza horizontalmente */
   margin-right: auto;  /* Centraliza horizontalmente */
   text-align: center;  /* Opcional: centraliza o texto dentro do parágrafo */
