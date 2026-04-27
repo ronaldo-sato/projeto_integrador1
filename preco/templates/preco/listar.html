@@ -12,6 +12,17 @@
 
   <body id="body" class="main-bg main-content">
 
+    <!-- Mensagem de feedback dos forms (css está no forms.css) -->
+    {% if messages %}
+      <div class="message-container">
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <section id="lista-preco" class="main-content section-page">
       <div>
         <h3>Preços Cadastrados</h3>

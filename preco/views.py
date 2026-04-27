@@ -9,6 +9,21 @@ from .models import Preco, Farmacia, Medicamento
 
 def cadastrar(request):
 
+    farmacias = Farmacia.objects.all()
+
+    # Pegar medicamentos únicos (para listar no select)
+    medicamentos_unicos = Medicamento.objects.values('nome') \
+        .distinct().order_by('nome')
+
+    # Para selecionar fabricantes de determinado medicamento, é preciso
+    # manter o estado das interações com o formulário
+    # Primeira interação: selecionar medicamento
+    # Segunda interação: selecionar fabricante (a partird de filtrados)
+    fabricantes_filtrados = None
+    medicamento_selecionado = None
+
+    filtrar = False
+
     if request.method == 'POST':
         # Do formulário vem os ids de farmacia e medicamento (são
         # selecionados a partir de listagem)
@@ -17,14 +32,43 @@ def cadastrar(request):
         preco_entrada = request.POST.get('valor_preco')
         # data_hora = request.POST.get('data_hora')
 
+        medicamento_selecionado = request.POST.get('medicamento_nome')
+        filtrar = request.POST.get('acao_botao') == 'filtrar'
+
+        # Quando o botão de filtrar é acionado, os fabricantes de
+        # determinado medicamento serão passados
+        if filtrar and medicamento_selecionado:
+
+            fabricantes_filtrados = Medicamento.objects.filter(
+                nome=medicamento_selecionado)
+
+            return render(request, 'base/index.html', {
+                'farmacias': farmacias,
+                'medicamentos_unicos': medicamentos_unicos,
+                'fabricantes_filtrados': fabricantes_filtrados,
+                'medicamento_selecionado': medicamento_selecionado,
+                'farmacia_selecionada_id': farmacia_id,
+                'preco_digitado': preco_entrada,
+            })
+
+    if not filtrar:
+
         if not farmacia_id or not medicamento_id or not preco_entrada:
 
             messages.error(
                 request,
-                'Por favor, selecione a farmácia e o medicamento,' +
-                ' e informe o valor.')
+                'Por favor, selecione a farmácia, o medicamento e' +
+                ' informe o valor (todos os campos são obrigatórios).')
 
-            return redirect('base:index')
+            # retornando com valores selecionados
+            return render(request, 'base/index.html', {
+                'farmacias': farmacias,
+                'medicamentos_unicos': medicamentos_unicos,
+                'fabricantes_filtrados': fabricantes_filtrados,
+                'medicamento_selecionado': medicamento_selecionado,
+                'farmacia_selecionada_id': farmacia_id,
+                'preco_digitado': preco_entrada,
+            })
 
         try:
             # Converte valor para float/decimal (tratando vírgula
@@ -38,14 +82,12 @@ def cadastrar(request):
                 preco=preco
             )
 
-            messages.success(request, "Preço cadastrado com sucesso!")
+            messages.success(request, 'Preço cadastrado com sucesso!')
 
-        except Exception as e:
+        except Exception:
 
             messages.error(
-                request, "Erro ao cadastrar preço. Verifique os dados.")
-
-        return redirect('base:index')
+                request, 'Erro ao cadastrar preço. Verifique os dados.')
 
     return redirect('base:index')
 
