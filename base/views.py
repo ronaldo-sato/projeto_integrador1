@@ -15,11 +15,19 @@ from medicamento.models import Medicamento
 # do forms de cadastro de preço
 def index(request):
 
+    farmacias = Farmacia.objects.all()
+    medicamentos = Medicamento.objects.all()
+    medicamentos_unicos = Medicamento.objects.values('nome') \
+        .distinct().order_by('nome')
+
+    fabricantes_filtrados = None
+    medicamento_selecionado = request.GET.get('medicamento_nome')
+
     # Incluindo medicamentos_unicos: nome de medicamentos sem repetição
     context = {
-        'farmacias': Farmacia.objects.all(),
-        'medicamentos': Medicamento.objects.all(),
-        'medicamentos_unicos': Medicamento.objects.values('nome')
-        .distinct().order_by('nome'),
+        'farmacias': farmacias,
+        'medicamentos': medicamentos,
+        'medicamentos_unicos': medicamentos_unicos,
+        'medicamento_selecionado': medicamento_selecionado,
     }
     return render(request, 'base/index.html', context)
