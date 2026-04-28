@@ -21,7 +21,8 @@
 html {  /* seletor por elemento */
   font-size: 62.5%;  /* para usar unidade relativa rem (1rem = 10px) */
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;  /* ativação de imã de rolagem no contêiner principal */ 
+  scroll-snap-type: y mandatory;  /* ativação de imã de rolagem no contêiner principal */
+  scroll-padding-top: 2rem; /* distância da âncora de navegação para o topo */
 }
 
 .montserrat {  /* para headings */
@@ -103,6 +104,7 @@ p {
   flex-direction: column;  /* direção eixo principal */
   justify-content: center;
   text-align: center;
+  /* padding-top: var(--gap); */
 }
 
 .menu {

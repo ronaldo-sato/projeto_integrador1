@@ -15,11 +15,11 @@ form {
   text-align: left;      /* texto alinhado à esquerda */
   max-width: 90vh;       /* ajustando largura */
   width: 100%;           /* */
-  margin-top: 1.5rem;    /* espaçamento para o topo */
+  margin-top: 0rem;    /* espaçamento para o topo */
 }
 
 .formulario p {
-    margin-bottom: .8rem; /* espaçamento vertical entre os <p>s dos formulários */
+    margin-bottom: .5rem; /* espaçamento vertical entre os <p>s dos formulários */
 }
 
 .button {
@@ -27,7 +27,7 @@ form {
 }
 
 .fieldset {
-  padding: 1rem;         /* espaçamento interno */
+  padding: .7rem;         /* espaçamento interno */
   border-radius: 0.5rem; /* arredondamento de borda */
 }
 
