@@ -52,6 +52,10 @@
         <p>
           Esta é uma aplicação protótipo para comparação de preços de medicamentos.
         </p>
+        <br>
+        {% comment %} <p>
+          Para pesquisar o preço de um medicamento, é preciso que o preço do medicamento em uma farmácia esteja cadastrado. Para isso, tanto a farmácia quanto o medicamento (e respectivo  fabricante) precisam estar cadastrados. Dessa forma, estando a farmácia e medicamento cadastrados, no cadastro do preço selecione a opção desejada para medicamento, fabricante (após filtrar) e farmácia, e informe o preço. Para cadastrar o preço, se as opções para farmácia ou medicamento não correspondem ao esperado, se não aparecem na caixa de seleção, é porque ainda não estão cadastrados e é preciso cadastrá-los antes de cadastrar o preço. Assim, havendo o cadastro do preço de um medicamento em uma farmácia, a pesquisa do preço pode ser feita, quando uma nova tela é aberta com a listagem do medicamento dos diferentes fabricantes para as diferentes farmácias e o menor preço fica em destaque. 
+        </p> {% endcomment %}
       </div>
     </section>
 
@@ -149,7 +153,7 @@
               <label for="select-fabricante">Fabricante:</label>
               <select id="select-fabricante" name="medicamento_id">
                 {% if fabricantes_filtrados %}
-                  <option value="">Filtre as marcas (botão Filtrar)</option>
+                  <option value="">Filtre as marcas (botão Filtrar acima)</option>
                   {% for medicamento in fabricantes_filtrados %}
                       <option value="{{ medicamento.id }}">
                         {{ medicamento.fabricante }}
@@ -199,11 +203,13 @@
             <legend>Preencha</legend>
             <p>
               <label for="select-medicamento-pesquisa">Medicamento:</label>
-              <select id="select-medicamento-pesquisa" name="medicamento_id">
+              <select id="select-medicamento-pesquisa" name="medicamento_nome">
                   <option value="">Selecione um medicamento</option>
                   {% if medicamentos_unicos %}
                     {% for medicamento in medicamentos_unicos %}
-                        <option value="{{ medicamento.id }}">{{ medicamento.nome }}</option>
+                        <option value="{{ medicamento.nome }}">
+                          {{ medicamento.nome }}
+                        </option>
                     {% endfor %}
                   {% else %}
                     <option value="" disabled selected>Não há medicamento cadastrado</option>
@@ -224,7 +230,7 @@
       <div>
         <div class="about">
           <h2>Projeto Integrador 1</h2>
-          <p>Esta aplicação foi desenvolvida no 1o semestre de 2026 dentro do contexto da disciplina <b>DRP03 - Projeto Integrador em Computação
+          <p>Esta aplicação foi desenvolvida no 1o semestre de 2026 dentro do contexto da <b>disciplina DRP03 - Projeto Integrador em Computação
               1</b> da Univesp, sob <b>orientação de Éder Aparecido Parigi Filho</b>, pelos <b>integrantes do Grupo 3</b>:
           </p>
         </div>
