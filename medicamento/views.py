@@ -45,7 +45,7 @@ def listar(request):
 
     medicamentos = Medicamento.objects.all()
 
-    # Renderiza a tabela de farmácias
+    # Renderiza a tabela de medicamentos
     return render(
         request, 'medicamento/listar.html', {'medicamentos': medicamentos})
 
@@ -57,7 +57,7 @@ def deletar(request, id):
 
     medicamento.delete()
 
-    messages.success(request, f'Farmácia "{nome}" removida com sucesso!')
+    messages.success(request, f'Medicamento "{nome}" removido com sucesso!')
 
     return redirect('medicamento:listar')
 
