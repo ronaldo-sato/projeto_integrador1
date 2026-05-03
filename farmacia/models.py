@@ -12,7 +12,12 @@ class Farmacia(models.Model):
 
     # Podem farmácias com mesmo nome desde que com endereço diferente
     class Meta:
-        unique_together = ('nome', 'endereco')
+        constraints = [
+            models.UniqueConstraint(
+                fields=['nome', 'endereco'],
+                name='unique_farmacia_endereco'
+            )
+        ]
 
     def __str__(self):
         return f'{self.nome} {self.endereco}'
