@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'medicamento',
     'preco',
     'pesquisa',
-    'teste',
+    # 'teste',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'  # 'en-us'
 
 TIME_ZONE = 'America/Sao_Paulo'  # 'UTC'
 
