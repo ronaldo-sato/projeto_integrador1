@@ -32,6 +32,7 @@
           <thead>
             <tr>
               <th>Medicamento</th>
+              <th>Fabricante</th>
               <th>Farmácia</th>
               <th>Endereço</th>
               <th>Preço</th>
@@ -44,6 +45,7 @@
             {% for preco in precos %}
             <tr>
               <td>{{ preco.medicamento.nome }}</td>
+              <td>{{ preco.medicamento.fabricante }}</td>
               <td>{{ preco.farmacia.nome }}</td>
               <td>{{ preco.farmacia.endereco }}</td>
               <td>R$ {{ preco.preco }}</td>
@@ -55,7 +57,7 @@
             </tr>
             {% empty %}
             <tr>
-              <td colspan="6" class="td-colspan">Nenhum preco cadastrado até o momento.</td>
+              <td colspan="7" class="td-colspan">Nenhum preco cadastrado até o momento.</td>
             </tr>
             {% endfor %}
           </tbody>
