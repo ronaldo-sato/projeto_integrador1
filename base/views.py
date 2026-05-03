@@ -24,13 +24,14 @@ def index(request):
     # Para manutenção de estado de formulário (após selecionar
     # medicamento, "filtrar marcas")
     fabricantes_filtrados = None
+    # Captura medicamento do select enviado pela url
     medicamento_selecionado = request.GET.get('medicamento_filtro')
 
     # Para manter o estado após o filtro
     if medicamento_selecionado:
 
         fabricantes_filtrados = Medicamento.objects.filter(
-            nome=medicamento_selecionado)
+            nome__iexact=medicamento_selecionado.strip())
 
     context = {
         'farmacias': farmacias,
