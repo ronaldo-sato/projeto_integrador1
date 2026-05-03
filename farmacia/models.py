@@ -10,5 +10,9 @@ class Farmacia(models.Model):
     nome = models.CharField('Nome', max_length=100, unique=True)
     endereco = models.CharField('Endereço', max_length=255)
 
+    # Podem farmácias com mesmo nome desde que com endereço diferente
+    class Meta:
+        unique_together = ('nome', 'endereco')
+
     def __str__(self):
         return f'{self.nome} {self.endereco}'
