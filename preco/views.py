@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse
+from django.utils.http import urlencode
 
 from .models import Preco, Farmacia, Medicamento
 
@@ -29,22 +30,14 @@ def cadastrar(request):
         # Se a ação for filtrar, devolve os fabricantes filtrados
         if acao == 'filtrar':  # and medicamento_selecionado:
 
-            # fabricantes_filtrados = Medicamento.objects.filter(
-            #     nome=medicamento_selecionado)
-
-            # return render(request, 'base/index.html', {
-            #     'farmacias': farmacias,
-            #     'medicamentos_unicos': medicamentos_unicos,
-            #     'fabricantes_filtrados': fabricantes_filtrados,
-            #     'medicamento_selecionado': medicamento_selecionado,
-            #     'farmacia_selecionada_id': farmacia_id,
-            #     'preco_digitado': preco_digitado,
-            # })
+            # Medicamentos com caracteres especiais precisam ser
+            # tratados (codificados corretamente)
+            params_url = urlencode(
+                {'medicamento_filtro': medicamento_selecionado})
 
             # Fazer com que o filtrar não vá para o topo da página,
             # incluindo a âncora e construindo a url para o formulário
-            url = reverse('base:index') + \
-                f'?medicamento_filtro={medicamento_selecionado}#preco'
+            url = f'{reverse('base:index')}?{params_url}#preco'
 
             return redirect(url)
 
