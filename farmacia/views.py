@@ -18,10 +18,15 @@ def cadastrar(request):
 
         # Verifica se já existe uma farmácia com este nome exato
         # nome__iexact ignora maiúsculas/minúsculas
-        if Farmacia.objects.filter(nome__iexact=nome).exists():
+        # Não pode farmácias com mesmo nome e endereços iguais
+        if Farmacia.objects.filter(
+                nome__iexact=nome,
+                endereco__iexact=endereco).exists():
             # Envia mensagem de erro
             messages.error(
-                request, f'A farmácia "{nome}" já está cadastrada!')
+                request,
+                f'A farmácia "{nome}" no endereço "{endereco}"' +
+                ' já está cadastrada!')
 
             # 'app_name:view_name'
             return redirect('base:index')
