@@ -14,7 +14,9 @@ A aplicação é uma página simples no estilo _Simple Landing Page_, ou seja, �
 
 A aplicação foi feita com [Django](https://www.djangoproject.com/), [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML) e [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS). 
 
-Como o preço faz o relacionamento de um medicamento com uma farmácia (entidade Preco tem relacionamento associativo entre as entidades Farmacia e Medicamento), para o cadastro do preço, é preciso que o medicamento e a farmácia estejam cadastrados.
+Como o preço faz o relacionamento de um medicamento com uma farmácia (entidade Preco tem relacionamento associativo entre as entidades Farmacia e Medicamento), para o cadastro do preço, é preciso que o medicamento e a farmácia estejam cadastrados. O Diagrama de Entidade-Relacionamento da aplicação:
+
+<img src="images/der.png" width="800">
 
 Assim, para cadastrar uma farmácia, isso é feito pela tela **Farmácia**, como mostrado abaixo:
 
