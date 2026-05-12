@@ -46,7 +46,7 @@ Caso contrário, se não houver preço cadastrado essa nova tela de tabela dos p
 
 Em relação ao funcionamento do _backend_, está implementado um CRUD (_Create_, _Read_, _Update_ e _Delete_ - respectivamente, Criar, Ler, Atualizar e Apagar) básico para cada entidade (Farmacia, Medicamento e Preco).
 
-Assim, o estado de cada entidade pode ser visualizado por uma "página escondida" (não está no **_Menu_ de Navegação**) que contém a listagem dos respectivos atributos, por meio das URLs no padrão "/<entidade>/listar/".
+Assim, o estado de cada entidade pode ser visualizado por uma "página escondida" (não está no **_Menu_ de Navegação**) que contém a listagem dos respectivos atributos, por meio das URLs no padrão "/entidade/listar/".
 
 Entidade Farmacia listada em /farmacia/listar/:
 
