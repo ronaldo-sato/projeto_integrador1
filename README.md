@@ -65,3 +65,7 @@ Entidade Preco listada (apenas início e final da listagem) em /precos/listar/:
 <img src="app_images/lista_precos_final.png" width="1000">
 
 Note que ao final de cada registro há os botões "Alterar" e "Excluir", os quais permitem que os atributos Farmacia(nome, endereco), Medicamento(nome, fabricante) e Preco(preco, data_hora, fabricante_id, medicamento_id), possam ser alterados ou apagados (também em "telas escondidas" - apenas para mostar o funcionamento do CRUD). 
+
+Uma explicação breve do funcionamento da aplicação:
+
+<video src="app_django.mp4" controls width="100%"></video>
