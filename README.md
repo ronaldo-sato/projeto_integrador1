@@ -14,7 +14,7 @@ A aplicação é uma página simples no estilo _Simple Landing Page_, ou seja, �
 
 A aplicação foi feita com [Django](https://www.djangoproject.com/), [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML) e [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS). 
 
-Como o preço faz o relacionamento de um medicamento com uma farmácia (entidade Preco tem relacionamento associativo entre as entidades Farmacia e Medicamento), para o cadastro do preço, é preciso que o medicamento e a farmácia estejam cadastrados. O Diagrama de Entidade-Relacionamento da aplicação:
+Como o preço faz o relacionamento de um medicamento com uma farmácia (entidade _Preco_ tem relacionamento associativo entre as entidades _Farmacia_ e _Medicamento_), para o cadastro do preço, é preciso que o medicamento e a farmácia estejam cadastrados. O Diagrama de Entidade-Relacionamento da aplicação:
 
 <img src="app_images/der.png" width="800">
 
@@ -26,7 +26,7 @@ E para cadastrar um medicamento, tela **Medicamento**:
 
 <img src="app_images/medicamento.png" width="1000">
 
-Estando a farmácia e o medicamento cadastrados é possível cadastrar o preço de um medicamento, já que o preço faz o relacionamento de medicamento e de farmácia (entidade Preço é associativa com relacionamento N:N entre a entidade Farmácia e entidade Medicamento).
+Estando a farmácia e o medicamento cadastrados é possível cadastrar o preço de um medicamento, já que o preço faz o relacionamento de medicamento e de farmácia (entidade _Preco_ é associativa com relacionamento N:N entre a entidade _Farmacia_ e entidade _Medicamento_).
 
 Para o cadastro do preço na tela **Preço**, é preciso selecionar o medicamento e filtrar os fabricantes (pelo botão "Filtrar"), para então selecionar o fabricante, informar o preço e selecionar a farmácia:
 
@@ -38,34 +38,36 @@ Logo, havendo algum preço cadastrado para um medicamento, a pesquisa de preço 
 
 Se o medicamento não aparecer como opção na tela de pesquisa, isso significa que ele não está cadastrado.
 
-Havendo algum preço cadastrado, ao realizar a pesquisa o medicamento deve aparecer em nova página (url relativa: "/pesquisa/precos/") contendo a tabela com a lista de preços, onde a linha com menor preço fica em destaque:
+Havendo algum preço cadastrado, ao realizar a pesquisa o medicamento deve aparecer em nova página (url relativa: _/pesquisa/precos/_) contendo a tabela com a lista de preços, onde a linha com menor preço fica em destaque:
 
 <img src="app_images/lista_pesquisa.png" width="1000">
 
 Caso contrário, se não houver preço cadastrado essa nova tela de tabela dos preços aparece vazia com a mensagem "Nenhum resultado encontrado".
 
-Em relação ao funcionamento do _backend_, está implementado um CRUD (_Create_, _Read_, _Update_ e _Delete_ - respectivamente, Criar, Ler, Atualizar e Apagar) básico para cada entidade (Farmacia, Medicamento e Preco).
+Em relação ao funcionamento do _backend_, está implementado um CRUD (_Create_, _Read_, _Update_ e _Delete_ - Criar, Ler, Atualizar e Apagar, respectivamente) básico para cada entidade (_Farmacia_, _Medicamento_ e _Preco_).
 
-Assim, o estado de cada entidade pode ser visualizado por uma "página escondida" (não está no **_Menu_ de Navegação**) que contém a listagem dos respectivos atributos, por meio das URLs no padrão "/entidade/listar/".
+Quanto ao estado de cada entidade, isso pode ser visualizado por uma "página escondida" (não está no **_Menu_ de Navegação**) que contém a listagem dos respectivos atributos, por meio das URLs no padrão _/entidade/listar/_.
 
-Entidade Farmacia listada em /farmacia/listar/:
+Entidade _Farmacia_ listada em _/farmacia/listar/_:
 
 <img src="app_images/lista_farmacias.png" width="1000">
 
-Entidade Medicamento listada (a seguir, apenas início e final da listagem) em /medicamento/listar/:
+Entidade _Medicamento_ listada (a seguir, apenas início e final da listagem) em _/medicamento/listar/_:
 
 <img src="app_images/lista_medicamentos_inicio.png" width="1000">
 
 <img src="app_images/lista_medicamentos_final.png" width="1000">
 
-Entidade Preco listada (apenas início e final da listagem) em /precos/listar/:
+Entidade _Preco_ listada (apenas início e final da listagem) em _/precos/listar/_:
 
 <img src="app_images/lista_precos_inicio.png" width="1000">
 
 <img src="app_images/lista_precos_final.png" width="1000">
 
-Note que ao final de cada registro há os botões "Alterar" e "Excluir", os quais permitem que os atributos Farmacia(nome, endereco), Medicamento(nome, fabricante) e Preco(preco, data_hora, fabricante_id, medicamento_id), possam ser alterados ou apagados (também em "telas escondidas" - apenas para mostar o funcionamento do CRUD). 
+Note que ao final de cada registro há os botões "Alterar" e "Excluir", os quais permitem que os atributos _Farmacia(nome, endereco)_, _Medicamento(nome, fabricante)_ e _Preco(preco, data_hora, fabricante_id, medicamento_id)_, possam ser alterados ou apagados (também em "telas escondidas" - apenas para mostar o funcionamento do CRUD). 
 
-Uma explicação breve do funcionamento da aplicação:
+Vídeo com explicação breve do funcionamento da aplicação:
 
 <video src="app_django.mp4" controls width="100%"></video>
+
+(Não está mostrando o vídeo, devido ao tamanho dele; mas se aparecer e estiver sem áudio há algum problema de codificação)
