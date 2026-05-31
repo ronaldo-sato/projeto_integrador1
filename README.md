@@ -1,3 +1,13 @@
+⚠️ **NOTA PARA A AVALIAÇÃO:** Este repositório continua em desenvolvimento ativo para fins de aprendizagem (branch develop/ é para refatorar e escalar o código e continuar aprendendo sobre Django). 
+O código correspondente à entrega para avaiação está congelado na branch (`main`) e também na tag `v1.0-univesp`.
+
+Para clonar a branch `main`: 
+```bash
+git clone https://github.com/ronaldo-sato/projeto_integrador1
+git switch main
+```
+
+
 Esta aplicação foi desenvolvida no contexto da disciplica **DRP03 - Projeto Integrador em Computação 1 da Univesp**, cujo tema **"Desenvolvimento de um software com framework web que utilize noções de banco de dados, praticando controle de versão"**, visa promover uma solução para algum problema na comunidade.
 
 Os envolvidos no desenvolvimento desta aplicação estão elencados na tela **Sobre**:
