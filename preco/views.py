@@ -107,7 +107,10 @@ def listar(request):
 
     # Renderiza a tabela de preços
     return render(
-        request, 'preco/listar.html', {'precos': precos})
+        request,
+        'preco/listar.html',
+        {'precos': precos,
+         'titulo': 'Preços Cadastrados'})
 
 
 def deletar(request, id):

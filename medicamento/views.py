@@ -47,7 +47,10 @@ def listar(request):
 
     # Renderiza a tabela de medicamentos
     return render(
-        request, 'medicamento/listar.html', {'medicamentos': medicamentos})
+        request,
+        'medicamento/listar.html',
+        {'medicamentos': medicamentos,
+         'titulo': 'Medicamentos Cadastrados'})
 
 
 def deletar(request, id):

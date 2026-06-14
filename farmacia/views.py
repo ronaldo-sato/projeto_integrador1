@@ -52,7 +52,10 @@ def listar(request):
 
     # Renderiza a tabela de farmácias
     return render(
-        request, 'farmacia/listar.html', {'farmacias': farmacias})
+        request,
+        'farmacia/listar.html',
+        {'farmacias': farmacias,
+         'titulo': 'Farmácias Cadastradas'})
 
 
 def deletar(request, id):
