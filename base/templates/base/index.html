@@ -18,16 +18,7 @@
 
   <body id="body" class="main-bg main-content">
 
-    <!-- Mensagem de feedback dos forms (css está no forms.css) -->
-    {% if messages %}
-      <div class="conteiner-mensagens">
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
+    {% include "base/partials/message.html" %}
 
     <!--Menu de Navegação-->
     <aside id="menu" class="menu">
