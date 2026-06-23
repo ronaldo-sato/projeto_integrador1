@@ -39,5 +39,6 @@ def index(request):
         'medicamentos_unicos': medicamentos_unicos,
         'medicamento_selecionado': medicamento_selecionado,
         'fabricantes_filtrados': fabricantes_filtrados,
+        'titulo': 'Projeto Integrador 1',
     }
     return render(request, 'base/index.html', context)
