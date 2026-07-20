@@ -8,6 +8,9 @@
   --error-color: #741720;
   --error-bg: #f3d4d6;
   --error-border: #cfaaad;
+  --warning-color: #807700;
+  --warning-bg: #ebe9d4;
+  --warning-border: #cfcc88;
 }
 
 form {
@@ -107,4 +110,10 @@ input[type="datetime-local"] {
     color: var(--error-color);
     background-color: var(--error-bg);
     border: 1px solid var(--error-border);
+}
+
+.alert-warning {
+    color: var(--warning-color);
+    background-color: var(--warning-bg);
+    border: 1px solid var(--warning-border);
 }
